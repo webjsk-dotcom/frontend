@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+.menu li:first-child{color:blue;}
+.menu li:nth-child(odd){background-color: #f0f0f0;}
+.menu li:nth-child(3){color:red;font-size:20px;}
+.info::before{
+  content: "※ ";color:red;font-weight: bold;
+}
+.info::after{
+  content: " -끝";color:gray;
+}
+</style>
+</head>
+<body>
+  <h1>메뉴 리스트</h1>
+
+  <ul class="menu">
+    <li>홈</li>
+    <li>소개</li>
+    <li>서비스</li>
+    <li>문의</li>
+    <li>공지사항</li>
+  </ul>
+
+  <p class="info">이 문장은 안내 문구입니다.</p>
+</body>
+</html>
+<!-- 
+.menu 안에서 **첫 번째 <li>**의 글자색을 파란색으로 바꾸세요.
+
+.menu 안에서 홀수 번째(<li>) 항목의 배경색을 연한 회색(#f0f0f0)으로 지정하세요.
+
+.menu 안에서 3번째 <li> 항목에 글자색을 빨간색, 글자 크기를 20px로 지정하세요.
+
+.info 문단 앞에 "※" 표시가 자동으로 붙도록 ::before를 사용하세요. (빨간색)
+
+.info 문단 뒤에 " - 끝." 이라는 텍스트가 자동으로 붙도록 ::after를 사용하세요. (회색) 
+-->
