@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.bigbox {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border: 1px dotted #333;
+  margin: 50px auto;
+
+}
+.face {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  bottom: 0;
+  /* 바닥을 기준으로 박스 사이즈를 조정 */
+  border: 5px solid #333;
+  background-color: #8cd5ff;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.eyeball {
+  width: 23px;
+  height: 23px;
+  border: 1px solid #333;
+  position: absolute;
+  top: 190px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.eyeball.left {
+  left: 120px;
+}
+
+.eyeball.right {
+  right: 120px;
+}
+
+.nose {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #333;
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  bottom: 160px;
+  background-color: #000;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.mouth{
+  width:95px;
+  height:75px;
+  position:absolute;
+  top:305px;
+  background-color: #fff;
+  border:4px solid #333;
+  border-radius: 50%;
+}
+.mouth.left{
+  left:160px;
+  transform: rotate(-25deg);
+}
+.mouth.right{
+  right:160px;
+  transform: rotate(25deg);
+}
+
+.line_left{
+  width: 100px;
+  height: 100px;
+  border: 1px solid #333;
+  position: absolute;
+  left: 100px;
+  top: 300px;
+}
+
+.line_left .line {
+  position: absolute;
+  width: 90px;
+  height: 2px;
+  background-color: #333;
+  top: 30px;
+  left: 4px;
+}
+
+.line_left .line1 {
+  transform-origin: right center;
+  transform: rotate(15deg);
+}
+
+.line_left .line2 {
+  top: 50px;
+}
+
+.line_left .line3 {
+  top: 70px;
+  transform: rotate(-15deg);
+  transform-origin: right center;
+}
+
+
+.line_right {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #333;
+  position: absolute;
+  right: 100px;
+  top: 300px;
+}
+
+.line_right .line {
+  position: absolute;
+  width: 90px;
+  height: 2px;
+  background-color: #333;
+  top: 30px;
+  left: 4px;
+}
+
+.line_right .line1 {
+  transform-origin: left center;
+  transform: rotate(-15deg);
+}
+
+.line_right .line2 {
+  top: 50px;
+}
+
+.line_right .line3 {
+  top: 70px;
+  transform: rotate(15deg);
+  transform-origin: left center;
+}
