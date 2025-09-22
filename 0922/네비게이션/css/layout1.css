@@ -13,6 +13,11 @@
   margin:0 auto;
   padding-bottom: 10px;
 }
+.bigbox h2 {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .bigbox .box{
   float:left;
   border:5px solid lime;
