@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+#myball{
+  position:relative;
+  left:10px;
+  height: 160px;
+  width:116px;
+  /* border-radius: 50px; */
+  /* border:1px solid #000; */
+  background: url(img/bg-main1.png) no-repeat 50% 50%;
+
+  animation: myani 3s infinite;
+  /* 애니메이션 끝부분 상태로 종료 */
+}
+@keyframes myani{
+  0%{top:10px;}
+  50%{top:500px;}
+  100%{top:0px;}
+}
+
+
+#myball1{
+  position:relative;
+  left:300px;
+  height: 160px;
+  width:116px;
+  /* border-radius: 50px; */
+  /* border:1px solid #000; */
+  background: url(img/bg-main1.png) no-repeat 50% 50%;
+
+  animation: myani 3s infinite;
+  /* 애니메이션 끝부분 상태로 종료 */
+}
+@keyframes myani{
+  0%{top:10px;}
+  50%{top:500px;}
+  100%{top:0px;}
+}
+
+
+
+</style>
+</head>
+<body>
+  <div id="myball"></div>
+  <div id="myball1"></div>   
+</body>
+</html>
