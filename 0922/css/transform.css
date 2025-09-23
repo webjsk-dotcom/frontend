@@ -13,6 +13,7 @@ p{
 .tra{
   background-color: #ae5329;
   transform: translate(-500px,0);
+  /* 변형 : 이동(x,y) */
   transition: all 0.5s;
 }
 
@@ -20,6 +21,7 @@ p{
 .btn1:hover + .tra{
   transform: translate(0,0);
 }
+/* btn1에 호버하면 원래위치 */
 
 .rot1{
   margin:200px 0;

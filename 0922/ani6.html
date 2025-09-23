@@ -33,7 +33,7 @@
   background: url(img/f1.png) no-repeat 50% 50%;
 
   animation: myani1 3s forwards linear;
-  /* 애니메이션 끝부분 상태로 종료 */
+  /* 애니메이션 끝부분 상태로 종료, linear 일정한 속도 */
 }
 @keyframes myani1{
   0%{left:10px;}
@@ -51,7 +51,8 @@
   background: url(img/f1.png) no-repeat 50% 50%;
 
   animation: myani2 3s forwards ease-out;
-  /* 애니메이션 끝부분 상태로 종료 */
+  /* 애니메이션 끝부분 상태로 종료, ease-out 속도를 점차느리게*/
+  /* ease-in 속도를 점차빠르게*/
 }
 @keyframes myani2{
   0%{left:10px;}
@@ -69,7 +70,8 @@
   background: url(img/f1.png) no-repeat 50% 50%;
 
   animation: myani3 3s forwards ease-in-out;
-  /* 애니메이션 끝부분 상태로 종료 */
+  /* 애니메이션 끝부분 상태로 종료,
+  ease-in-out시작시 애니메이션 효과의 속도를 점차 빠르게 한후 종료시 애니메이션 효과의 속도를 점차 느리게  */
 }
 @keyframes myani3{
   0%{left:10px;}
