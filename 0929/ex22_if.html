@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+ let st=prompt("성적을 입력하세요","");
+// if(st>100 || st<0){
+//   document.write("성적을 입력하세요")
+// }
+ if(st >= 90 && st <= 100){
+  document.write("수");
+ }else if(st >= 80 && st <= 89){
+   document.write("우"); 
+ }else if (st >= 70 && st <= 79 ) {
+   document.write("미");
+ }else if (st >= 60 && st <= 69) {
+   document.write("양");
+ }else{
+  document.write("가");
+ }
+</script>  
+</body>
+</html>
