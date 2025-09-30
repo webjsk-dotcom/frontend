@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+#box{
+  width:200px;
+  height:200px;
+
+}  
+.red-bg{
+  background-color: red;
+}
+.blue-bg{
+  background-color: blue;
+}
+</style>
+</head>
+<body>
+  <div id="box" class="red-bg">
+
+  </div>
+  <button id="changeColorBtn">컬러변경</button>
+</body>
+</html>
+<script>
+  const box = document.getElementById("box");
+  const button = document.getElementById("changeColorBtn");
+
+  // button.addEventListener('click',function(){});
+
+  button.addEventListener('click', function () {
+    if(box.classList.contains('red-bg')){ //red-bg class가 유무를 물어봄
+      box.classList.add('blue-bg');
+      box.classList.remove('red-bg');
+    }else{
+      box.classList.add('red-bg');
+      box.classList.remove('blue-bg');
+    }
+
+  });
+
+</script>
+
+<!-- 변경할일없을때 const 하지만 let써도됨 -->
+<!-- 
+  classList.contains
+  클래스들이 포함되고있냐(가지고있냐)
+
+  if(box.classList.contains('red-bg')
+  box에 red-class가 있냐 아니면else 아래실행
+-->

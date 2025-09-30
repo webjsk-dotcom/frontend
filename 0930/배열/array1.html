@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+  <script>
+    //변수 크기는 한계 a,b,c,d,e
+    //배열은 여러개의 값을 하나의 변수에 담는 객체의 일종
+    //a[0], a[1], a[2]
+    //예약 프로퍼티 window.name window.length 
+    //name 배열이름으로 쓸수없다.
+
+    var name1 = new Array();
+    name1[0] = "김부";
+    name1[1] = "정현";
+    name1[2] = "정주";
+    name1[3] = "김민";
+    name1[4] = "장영";
+    document.write(name1[3]+"<br>")
+
+    //배열
+    var days = new Array("일","월","화","수","목","금","토");
+    //day[0] = "일" days[1] = "월"
+    var today = new Date();
+    var yoil = days[today.getDay()];
+    document.write(yoil + "요일 <br>");
+
+    //전체 재산의 합 구하기
+    //new Array 생략대신 대괄호로 데이터를 바로 입력
+    var money = [100,100,200,50,70,90]; 
+    var theLen = money.length;//money배열의 갯수 -> 6
+    var total = 0;
+    for(var i = 0; i < theLen;i++){  //i가 6보다 작을때까지
+      today = today + money[i];
+    }
+    document.write(today);
+  </script>
+</body>
+</html>
+
+<!-- 
+  var 배열의 이름 = new Array(배열갯수)
+  배열이름[0] = 값;
+  배열이름[1] = 값;
+  배열이름[2] = 값;
+
+-->

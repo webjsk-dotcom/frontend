@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+  <script>
+    var Today = new Date();
+
+    document.write(Today.getFullYear()); 
+
+document.write("<br>")
+
+    document.write('오늘은 ',Today.getFullYear(),'년 ',Today.getMonth()+1,'월',Today.getDate(),'일');
+
+  document.write("<br>------------------------------<br>")
+    var DDay = new Date('1998.4.10');
+    document.write('내 생일은 ', DDay.getFullYear(), '년 ', DDay.getMonth() + 1, '월', DDay.getDate(), '일 입니다.');
+
+  </script>
+</body>
+</html>
+
+<!-- getFullYear() : 날짜정보중 년도를 4자리 수로 가져옵니다. -->
