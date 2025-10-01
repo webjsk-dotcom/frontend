@@ -63,9 +63,17 @@
   setInterval(function(){
     plusSlides(1)
   },3000)
+
+ 
 </script>
 
+
 <!-- 
+//forEach 는 querySelectorAll 에서만 사용가능
+
+const slides = document.getElementById('slide');
+const dots = document.getElementById('dot');
+
 for(i = 0; i < slides.length; i++){
     slides[i].classList.remove('on');
 }
