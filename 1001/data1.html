@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+  //숫자로 변환 Number() 사용 / parseInt() 사용
+  var sum = 0;
+  var avg = 0;
+  var kor = Number(prompt("당신의 국어 점수는?",""));
+  var mat = Number(prompt("당신의 수학 점수는?",""));
+  var eng = parseInt(prompt("당신의 영어 점수는?",""));
+  //150.5px
+  sum = kor + mat + eng;  //문자로인식해서 출력 708090
+  document.write(sum);
+</script> 
+</body>
+</html>
+
+<!-- 
+prompt("당신의 국어 점수는?","") ,"" 문자열로 인식해서 합해서 나옴 708090
+Number(), parseInt()  앞에 붙여주면 숫자로 인식해서 더해서 나옴  240
+parseInt() -> 많이 쓰임.
+-->

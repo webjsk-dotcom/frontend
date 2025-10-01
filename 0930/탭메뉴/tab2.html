@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+  /* .tab-container{
+    display: flex;
+  } */
+  .tab-link{
+    cursor: pointer;
+    padding:10px;
+    border:1px solid #ccc;
+    margin-right:5px;
+  }  
+  .tab-link.active{
+    border:2px solid #333;
+    background-color: #ddd;
+  }
+  .tab-content{
+    display: none;
+    background:#eee;
+    width:300px;
+    height:100px;
+    border:1px solid #ccc;
+    padding:10px;
+    box-sizing: border-box;
+  }
+  .tab-content.active{
+  display: block;
+  }
+
+</style>
 </head>
 <body>
   <h2>탭 메뉴 예제</h2>
   
   <!-- 탭 버튼 -->
   <div class="tab-buttons">
-    <button class="tab-link active" data-tab="tab1">🍎 사과</button>
-    <button class="tab-link" data-tab="tab2">🍌 바나나</button>
-    <button class="tab-link" data-tab="tab3">🍇 포도</button>
+    <button class="tab-link active" data-tab="tab1" onclick="changeTab(tab1)">🍎 사과</button>
+    <button class="tab-link" data-tab="tab2" onclick="changeTab(tab2)">🍌 바나나</button>
+    <button class="tab-link" data-tab="tab3" onclick="changeTab(tab3)">🍇 포도</button>
   </div>
   
   <!-- 탭 내용 -->
@@ -21,3 +49,23 @@
   <div id="tab3" class="tab-content">포도는 보라색이고 송이로 열립니다.</div>
 </body>
 </html>
+
+<script>
+  function changeTab(tabId){
+    const allTabs = document.querySelectorAll(".tab-link");
+    const allcontent = document.querySelectorAll(".tab-content");
+
+    allTabs.forEach(function(tab){
+      tab.classList.remove('active');
+    });
+
+    allcontent.forEach(function (content) {
+      content.classList.remove('active');
+    });
+
+    const selectedTab = document.getElementById("tab-link" + tabId);
+    selectedTab.classList.add('active');
+
+
+  }
+</script>
