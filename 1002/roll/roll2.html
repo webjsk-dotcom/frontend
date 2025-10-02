@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+*{margin:0;padding:0;}  
+ul{list-style: none;}  
+
+#wrap{
+  margin:0 auto;
+  width:1200px;
+  /* overflow: hidden; */
+}
+header{
+  height:200px;
+  background-color: #ddd;
+}
+#banner_wrap{
+  height:300px;
+  position: relative;
+  overflow: hidden;
+}
+#frame{
+  
+}
+#banner{
+  display: flex;
+}
+#banner li{
+
+}
+#banner_wrap p{cursor: pointer;}
+#banner_wrap .prev{
+  position:absolute;top:50%;left:15px;transform: translateY(-50%);
+}
+#banner_wrap .next{
+  position:absolute;top:50%;right:15px;transform: translateY(-50%);
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <header></header>
+  <div id="banner_wrap">
+    <div id="frame">
+      <ul id="banner">
+        <li><a href="#"><img src="images/slide1.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/slide2.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/slide3.jpg" alt=""></a></li>
+      </ul>
+    </div>
+    <p class="prev"><img src="images/prev_btn.png" alt=""></p>
+    <p class="next"><img src="images/next_btn.png" alt=""></p>
+  </div>
+
+</div><!--wrap/-->  
+
+<script>
+  let list = document.getElementById('banner'); //li를 감싸는 넓이 800 ul#banner
+  let listLi = document.querySelectorAll('#banner li'); //사진을 감싸는 li 총 5개
+  let total = listLi.length; //현재는 5
+  let li_width = 1200;
+  // let li_width = document.querySelector('#banner>li').offsetWidth; => 80
+  for (let i = 0; i < 3; i++) {
+    let copyObj = listLi[i].cloneNode(true);
+    list.append(copyObj); //ul 맨뒤로 copyObj를 추가해라
+  }
+
+  let num = 0;
+
+  document.querySelector('.next').addEventListener('click', function (e) {
+    e.preventDefault();
+
+    if (num === total) {
+      num = 0;
+      list.style.transition = 'none';
+      list.style.marginLeft = 0;
+      //트랜지션이 없으므로 움직임없이 첫번째 사진으로 순간적으로 이동
+    }
+    setTimeout(function () {
+      num++;
+      list.style.transition = 'margin-left 0.5s';
+      list.style.marginLeft = -li_width * num + 'px';
+    }, 50);
+
+  });
+
+
+  document.querySelector('.prev').addEventListener('click', function (e) {
+    e.preventDefault();
+
+    if (num === 0) {
+      num = total;
+      list.style.transition = 'none';
+      list.style.marginLeft = -li_width * num + 'px';
+      //트랜지션이 없으므로 움직임없이 첫번째 사진으로 순간적으로 이동
+    }
+    setTimeout(function () {
+      num--;
+      list.style.transition = 'margin-left 0.5s';
+      list.style.marginLeft = -li_width * num + 'px';
+    }, 50);
+
+  });
+
+function autoPlay() {
+    if (num === total) {
+      num = 0;
+      list.style.transition = 'none';
+      list.style.marginLeft = 0;
+      //트랜지션이 없으므로 움직임없이 첫번째 사진으로 순간적으로 이동
+    }
+    setTimeout(function () {
+      num++;
+      list.style.transition = 'margin-left 0.5s';
+      list.style.marginLeft = -li_width * num + 'px';
+    }, 50);
+
+  }
+
+  let frame = document.getElementById('frame');
+
+  let interVal = setInterval(autoPlay, 3000);
+
+  frame.addEventListener('mouseover', function () {
+    clearInterval(interVal);
+  });
+  frame.addEventListener('mouseout', function () {
+    interVal = setInterval(autoPlay, 3000);
+  });
+</script>
+</body>
+</html>
+
