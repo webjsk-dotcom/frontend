@@ -59,8 +59,8 @@ header{
 
 <script>
   let list = document.getElementById('banner'); //li를 감싸는 넓이 800 ul#banner
-  let listLi = document.querySelectorAll('#banner li'); //사진을 감싸는 li 총 5개
-  let total = listLi.length; //현재는 5
+  let listLi = document.querySelectorAll('#banner li'); //사진을 감싸는 li 총 3개
+  let total = listLi.length; //현재는 3
   let li_width = 1200;
   // let li_width = document.querySelector('#banner>li').offsetWidth; => 80
   for (let i = 0; i < 3; i++) {
@@ -70,9 +70,8 @@ header{
 
   let num = 0;
 
-  document.querySelector('.next').addEventListener('click', function (e) {
-    e.preventDefault();
-
+  document.querySelector('.next').addEventListener('click', function () {
+    
     if (num === total) {
       num = 0;
       list.style.transition = 'none';
@@ -88,8 +87,7 @@ header{
   });
 
 
-  document.querySelector('.prev').addEventListener('click', function (e) {
-    e.preventDefault();
+  document.querySelector('.prev').addEventListener('click', function () {    
 
     if (num === 0) {
       num = total;
