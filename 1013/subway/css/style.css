@@ -1,0 +1,191 @@
+*{margin: 0;padding: 0;}
+ul{list-style: none;}
+img{vertical-align: top;border:0;}
+a{text-decoration: none;}
+body {font:12px "맑은고딕";}
+
+#wrap{width:100%;}
+header{
+  width:100%;
+  height:165px;
+  border-top:5px solid #009223;
+  position: relative;
+  z-index: 10;
+}
+.header_logo{height:100px;}
+.header_logo h1{text-align: center;padding-top:30px;box-sizing: border-box;}
+
+.header_menu{
+  height:65px;
+  /* background:pink; */
+  /* border-bottom: 3px solid red; */
+}
+.header_menu nav{
+  width: 100%;
+  height: 65px;
+  background-color: #999;
+  text-align: center;
+  position: relative;
+  /* border-bottom: 1px solid blue;z-index: 11; */
+}
+nav .gnb{
+  width: 100%;
+  height: 65px;
+  background-color: #fff;
+  position: absolute;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+
+nav .gnb:hover {
+  height: 300px;
+    
+}
+
+.gnb>li {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+.gnb>li>a {
+  display: block;
+  width: 200px;
+  height: 65px;
+  line-height: 65px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #292929;
+}
+
+.gnb>li:hover>a {
+  /* background: lightblue; */
+  color: #009223;
+   
+}
+
+.gnb .sub{}
+
+.gnb .sub li{line-height: 2.5;}
+
+.gnb .sub li a{
+  font-size:14px;
+  color: #292929;
+}
+
+.gnb .sub li a:hover{color: #009223;}
+
+
+
+
+
+.visual{
+  width:100%;
+  height:440px;
+  background:skyblue;
+  position:relative;
+}
+
+#brandVisual {
+  position: relative;
+  width: 100%;
+  min-width: 1000px;
+  height: 440px;
+  background-color: #8c908c;
+  /* overflow: hidden; */
+}
+
+#brandVisual ul li {
+  position: absolute;
+  width: 100%;
+  height: 440px;
+}
+#brandVisual ul li a {
+  display: block;
+  text-indent: -9999px;
+}
+
+#brandVisual .visual_0 {
+  left: 0;
+  background: url(../img/s1.jpg) 50% 0 no-repeat;
+}
+
+#brandVisual .visual_1 {
+  left: 100%;
+  background: url(../img/s2.jpg) 50% 0 no-repeat;
+}
+
+#brandVisual .visual_2 {
+  left: 200%;
+  background: url(../img/s3.jpg) 50% 0 no-repeat;
+}
+
+#brandVisual .visual_3 {
+  left: 300%;
+  background: url(../img/s4.jpg) 50% 0 no-repeat;
+}
+
+#brandVisual .visual_4 {
+  left: 400%;
+  background: url(../img/s5.jpg) 50% 0 no-repeat;
+}
+
+#buttonList {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  margin-left: 500px;
+  display: flex;
+}
+
+#buttonList li {
+  width: 10px;
+  height: 10px;
+  /* float:left; */
+  border-radius: 7.5px;
+  margin: 0 5px;
+  background-color: #ddd;
+
+}
+
+#buttonList li.on {
+  /* background-position:0 0; */
+  width: 30px;
+  background-color: gold;
+}
+
+#buttonList li a {
+  display: block;
+  text-indent: -9999px;
+}
+
+.search{
+  position:absolute;
+  bottom:-50px;
+  left:50%;
+  margin-left:120px;
+  width:500px;
+  height: 80px;  
+}
+.search li{
+  float:left;
+  width:250px;
+  height:80px;
+  text-align: center;
+  line-height: 80px;
+}
+.search li a{
+  font-size:22px;
+  font-weight: bold;
+}
+.search li:nth-child(1){
+  background-color: #ffce32;
+  border-radius: 30px 0 0 0;  
+}
+.search li:nth-child(1) a{color:#292929;}
+.search li:nth-child(2) {
+  background-color: #009223;
+  border-radius: 0 0 30px 0;  
+}
+.search li:nth-child(2) a{color:#fff;}

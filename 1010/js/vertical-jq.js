@@ -16,7 +16,7 @@ $(function(){
   $('.m_menu>li>a').on('click',function(e){
     e.preventDefault(); //클릭방지
     //.m_menu 안에 li자식 a 태그를 클릭하면 
-    var status = $(this).next('.sub').css('display'); //display 상태가 none인지 block 인지
+    var status = $(this).next('.sub').css('display'); //display 상태가 none인지 block 인지(속성을알고싶을때)
     // 클릭한 a 태그 담에 있는 요소중 클래스가 sub인 요소의 display 속성값을 가져와서
     // status 저장 none이면 현재  sub가 닫혀있는 상태 block 현재 서브가 열린상태
     // alert(status);
