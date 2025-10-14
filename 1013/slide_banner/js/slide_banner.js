@@ -20,7 +20,7 @@ $(function(){
       var n = current + 1;
       if(n === 3) {n = 0};  //n=0 {}생략가능 (반복시키기위함)
 
-      button.eq(n).trigger('click');
+      button.eq(n).trigger('click'); //trigger강제클릭(트리거)
       //컴퓨터가 1씩 증가하면서 버튼을 강제로 클릭한다.
     },3000);
   }

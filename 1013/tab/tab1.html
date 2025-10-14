@@ -6,10 +6,10 @@
 <title>Document</title>
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <style>
-  .tab li{background-color: #fff;}
+  .tab li{background-color: #fff;transition: all 0.5s;}
   .tab li.on{background-color: red;}
 
-  .tab_list div{background-color: #fff;}
+  .tab_list div{background-color: #fff;transition: all 0.5s;}
   .tab_list div.on{background-color: red;}
 </style>
 </head>
@@ -30,7 +30,7 @@
 <script>
   $(function(){
     $(".tab>li").click(function(){
-      var i = $(this).index();
+      var i = $(this).index(); //클릭한 인덱스 번호구하기 (현재클릭한, 이벤트가발생한곳)
       // alert(i);
       $(".tab li").removeClass('on');
       $(".tab li").eq(i).addClass('on');

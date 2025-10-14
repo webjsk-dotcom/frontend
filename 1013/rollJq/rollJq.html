@@ -68,7 +68,7 @@ let total = $('#banner>li').length; //5
 //alert(total);
 //let li_width = 80;
  // let li_width = document.querySelector('#banner>li').offsetWidth; => 80
-let li_width =  $('#banner>li').eq(0).width();
+let li_width =  $('#banner>li').eq(0).width(); //80
 //let li_width1 =  parseInt($('#banner>li').eq(0).css('width')); 80px -> 80
 //alert(li_width1);
 let copy1 =$('#banner>li:lt(3)').clone();  // #banner>li 중 인덱스번호 3보다 작은(0,1,2)을 clone복사(ctrl+c);
@@ -127,10 +127,10 @@ function autoPlay(){
 
 //마우스올릴때 멈춤
 $('#frame').mouseover(function(){
-    clearInterval(id);
+    clearInterval(id); //자동으로돌아가는거 멈춤
 });
 $('#frame').mouseout(function(){
-    id = setInterval(autoPlay, 2000);
+    id = setInterval(autoPlay, 2000);  
 });
 
 </script>
