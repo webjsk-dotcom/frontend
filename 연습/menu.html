@@ -1,15 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+*{margin: 0;padding: 0;}
+ul{list-style: none;}
+img{vertical-align: top;border:0;}
+a{text-decoration: none;}
+body {font:12px "맑은고딕";}
+
+#wrap{width:100%;}
+header{
+  width:100%;
+  height:165px;
+ 
+}  
+.header_logo{height:100px;padding-top:30px;box-sizing: border-box;}
+.header_logo h1{
+  text-align: center;
+}
+.header_logo h1 a{
+  color:#252525;
+}
+
+.header_menu{
+  height:65px;   
+  background:skyblue;
+}
+
+nav{
+  width:100%;
+  height:65px;
+  background-color: #999;
+  text-align: center;
+  position:relative;
+}
+nav .gnb{
+  width:100%;
+  height: 65px;
+  background-color: #fff;
+  transition: all 0.3s;
+  position:absolute;
+  overflow: hidden;
+}
+nav .gnb:hover{
+  height:315px;
+}
+.gnb>li{
+  display: inline-block;
+  vertical-align: top;
+}
+.gnb>li>a{
+  display: block;
+  width:200px;
+  height:65px;
+  line-height: 65px;
+  font-size:17px;
+  font-weight: bold;
+  color:#292929;
+
+}
+.gnb>li:hover a{
+  color:green;
+}
+
+.gnb .sub{
+  margin-top:15px;
+}
+.gnb .sub li{
+  line-height: 2.5;
+} 
+.gnb .sub li a{
+  color:#252525;
+  font-size:14px
+}
+.gnb .sub li a:hover{
+  color:green;
+}
+
+
+.line{
+  position:absolute;
+  top:65px;
+  width:100%;height:1px;
+  background-color: #ccc;  
+}
+
+
+
+
+.visual{
+  width:100%;
+  height:500px;
+  background:tomato;
+}
+
+</style>
 </head>
 <body>
 <div id="wrap">
   <header>
     <div class="header_logo">
-      <h1><a href="#"><img src="img/logo_w.png" alt="logo"></a></h1>
+      <h1><a href="#">LOGO</a></h1>
     </div>
     <div class="header_menu">
       <nav>
@@ -70,6 +164,8 @@
       </nav>
     </div>
   </header>
+
+  <div class="visual"></div>
 </div>  
 </body>
 </html>

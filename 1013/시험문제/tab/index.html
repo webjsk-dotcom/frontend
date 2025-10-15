@@ -4,89 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TAB</title>
+<link rel="stylesheet" href="css/style.css">
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-<style>
-  * {
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-  border: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-body {
-  font: 12px "맑은고딕";
-}
-
-.tab {
-  margin: 50px auto;
-  width: 600px;
-  overflow: hidden;
-}
-
-.tab_menu {
-  width: 600px;
-  overflow: hidden;
-}
-
-.tab_menu ul {}
-
-.tab_menu li {
-  float: left;
-  height: 40px;
-  margin-right: 2px;
-}
-
-.tab_menu li a {
-  display: block;
-  width: 140px;
-  height: 40px;
-  background-color: darkgrey;
-  text-align: center;
-  line-height: 40px;
-  color: #fff;
-  font-size: 15px;
-}
-
-.tab_menu li.on a {
-  background-color: brown;
-}
-
-
-
-.tab_list {
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-}
-
-.tab_list div h3 {
-  font-size: 20px;
-}
-
-.tab_list div p {
-  font-size: 15px;
-  margin-top: 10px;
-}
-
-.tab_list div {
-  display: none;
-}
-
-.tab_list div.on {
-  display: block;
-}
-</style>
+<script src="js/script.js"></script>
 </head>
 <body>
 <div class="tab">
@@ -114,17 +34,5 @@ body {
     </div>
   </div>
 </div> 
-
-<script>
-  $(function () {
-    $(".tab_menu li").click(function () {
-      var i = $(this).index();
-      $(".tab_menu li").removeClass('on');
-      $(".tab_menu li").eq(i).addClass('on');
-      $(".tab_list div").removeClass('on');  
-      $(".tab_list div").eq(i).addClass('on'); 
-    });
-  });
-</script>
 </body>
 </html>
