@@ -1,0 +1,44 @@
+1. 구글에서 카카오 api검색
+-로그인 
+-내애프리케이션
+-문서 - 왼쪽메뉴 튜토리얼 -카카오 api 시작하기클릭 - 앱생성하러 가기
+
+앱>앱 설정>앱>일반
+javascript 키
+
+
+새창에서  -카카오 지도 검색 - kakao Maps API - 
+메인화면에서 Web 클릭 - 시작하기
+
+
+2. 오른쪽 상단에 app key발급
+3. javascript키 복사 
+  bceccd594bb478b5533d7d2ec63f8bb0
+
+
+1.앱 > 앱 설정 > 앱 > 일반
+하단 플랫폼 Web에 주소 넣기
+https://127.0.0.1:5500
+
+
+2.앱 > 제품 설정 > 카카오맵
+사용설정 상태on
+
+
+ 4. https://apis.map.kakao.com/web/guide/
+ html 복사해온다.
+
+ 5. <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=bceccd594bb478b5533d7d2ec63f8bb0"></script>
+ 스크립트를 키값을 넣어서 수정  
+ 5-1. 실행시키면 카카오 본사
+ 6. 본인의 집으로 위경도 알아오기
+ 7. 구글에서 구글맵을 검색
+   -더조은 컴퓨아카데미구로캠퍼스 
+   -위치 오른쪽 이위치공유
+
+37.485856, 126.897438복사
+
+   또는 
+
+   목적지 표시에서 손가락 나오면 오른쪽 버튼 
+   이곳이 궁금한가요 - 클릭 - 위경도 복사

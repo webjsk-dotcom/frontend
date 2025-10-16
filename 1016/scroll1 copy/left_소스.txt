@@ -1,0 +1,30 @@
+ var offset_t =  $('section>article').eq(i).offset().left;
+
+
+let sct = $(this).scrollLeft();
+        $('#sTop').text(sct);
+        $('#floatdiv').stop().animate({left:dLeft+sct},500)
+
+article{
+    width:100%;
+    height:100vh;
+    position: absolute;
+}    
+#article1{
+    background-color: burlywood;
+    left: 0;
+}
+#article2 {
+    background-color: coral;
+    left: 100%;
+}
+
+#article3 {
+    background-color: darkcyan;
+    left: 200%;
+}
+
+#article4 {
+    background-color: darksalmon;
+    left: 300%;
+}
