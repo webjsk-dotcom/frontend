@@ -1,0 +1,29 @@
+
+[javascript 교재]
+person   객체
+
+p140  
+사용자 페이지
+p143 (가장 잘 나타남)
+picture
+
+-꺼내서 쓰기 편함
+-배열로 지정할수 없을때 사용됨
+
+배열(숫자면 숫자 문자면 문자 구별해야하는데)
+person은 숫자, 문자 섞어서 사용하기 좋다.
+
+---------------
+제이슨 json (구글검색 : json 이란?)
+사람이 읽기 쉬운 텍스트 기반의 데이터 교환 형식
+
+예시)
+{
+  "firstName": "Kwon",
+  "lastName": "YoungJae",
+  "email": "kyoje11@gmail.com",
+  "hobby": ["puzzles", "swimming"]
+}
+
+
+

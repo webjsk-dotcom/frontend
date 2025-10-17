@@ -1,0 +1,7 @@
+e7e22754a4b44d874f2f4c8ad2917730
+
+
+http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}
+
+
+http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=e7e22754a4b44d874f2f4c8ad2917730

@@ -15,6 +15,8 @@ $(function(){
 
     //s_top 위치숫자나타내기
     $('.s_Top').text(sct);
+    
+    //section2  왼쪽 오른쪽 박스
     if(sct>=450 && sct <= 1000){
       $('.left1').addClass('on');
     }else{
