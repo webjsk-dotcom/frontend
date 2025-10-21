@@ -1,0 +1,14 @@
+
+npm start
+
+npm i   --> node_modules 폴더 생성하기
+
+
+ctrl   c     하면 빠져나옴
+
+
+npx create-react-app test1     폴더다시만들기
+
+
+npx create-react-app .    폴더가 만들어진상태면 폴더명 대신 .(점)
+

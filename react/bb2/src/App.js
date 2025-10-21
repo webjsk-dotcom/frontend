@@ -1,5 +1,4 @@
 import React from 'react'
-// import Header from './Header'
 import Header from './Header'
 
 export default function App() {
@@ -7,7 +6,7 @@ export default function App() {
     <div className='App'>
       <Header/>
       <main>
-        <h2>메인 콘텐츠 영역</h2>
+        <h2>메인 콘텐츠 영역2</h2>
       </main>
     </div>
   )

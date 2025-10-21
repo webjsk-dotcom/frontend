@@ -3,10 +3,10 @@ import React, { useState } from 'react'
 export default function Counter() {
 
   const [number,setNumber] = useState(0);
-  //동적 state 상태 를 관리 하는 useState
+  //동적 state 상태 를 관리 하는 useState   , 훅
   //number 현재값
 
-  const onIncrease = () =>{
+  const onIncrease = () =>{  //익명함수
     // console.log(+1);
     // setNumber(number + 1);
     // setNumber(number + 1);
