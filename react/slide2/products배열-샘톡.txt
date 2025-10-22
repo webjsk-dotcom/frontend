@@ -1,0 +1,16 @@
+→ 만약 products 배열이 다음과 같다고 해볼게요:
+
+const products = [
+  { name: "메인상품", img: "main.jpg", category: "추천" },
+  { name: "보조상품1", img: "sub1.jpg", category: "신상" },
+  { name: "보조상품2", img: "sub2.jpg", category: "인기" }
+];
+그러면 products.slice(1)은:
+
+[
+  { name: "보조상품1", img: "sub1.jpg", category: "신상" },
+  { name: "보조상품2", img: "sub2.jpg", category: "인기" }
+]
+즉 👉
+첫 번째 상품(메인 상품) 은 제외하고,
+그 다음 상품들(사이드 상품) 만 화면에 렌더링합니다.

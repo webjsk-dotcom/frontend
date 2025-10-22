@@ -86,10 +86,15 @@ export default function App() {
 //active: !user.active -> active 값을 반대로 뒤집기 true -> false 로 false -> true
 
 
+ // 👇 이 부분이 새로 추가된 테스트용 state입니다.
+  const [visible, setVisible] = useState(true);
+
 
   return (
     <div>
-      
+      <button onClick={() => setVisible(!visible)}> {/* !visible<-false */}
+        {visible ? 'UserList 숨기기' : 'UserList 보이기'}
+      </button>
 
       <CreateUser 
         username={username}
@@ -98,8 +103,11 @@ export default function App() {
         onCreate={onCreate}
         // 함수전달
       />
-      <UserList2 users={users} onRemove={onRemove} onToggle={onToggle} /> 
+      {/* <UserList2 users={users} onRemove={onRemove} onToggle={onToggle} />  */}
       {/* <UserList2 users={users}/> 실제내용은 여기로 들어간다 */}
+      {visible && (
+        <UserList2 users={users} onRemove={onRemove} onToggle={onToggle} />
+      )}
     </div>
   )
 }
