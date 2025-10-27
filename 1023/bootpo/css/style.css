@@ -1,23 +1,26 @@
-.navbar{
-  background-color:#f5511e;
-  color:#fff;
+.navbar {
+  background-color: #f5511e;
+  color: #fff;
 }
-.nav-link{color:#fff}
-.nav-link.active{
-  background-color: #fff;color:#f4511e !important;
+.nav-link {
+  color: #fff;
+}
+.nav-link.active {
+  background-color: #fff;
+  color: #f4511e !important;
 }
 
-.header{
-  background-color: #f4511e;
-  color:#fff;
+.header {
+  background-color: #f4511e !important;
+  color: #fff !important;
 }
-.graph{
-  color:#f4511e !important;
-  font-size:160px !important;
+.graph {
+  color: #f4511e !important;
+  font-size: 160px !important;
 }
-.logo-small{
-  font-size:60px !important;
-  color:#f4511e !important;
+.logo-small {
+  font-size: 60px !important;
+  color: #f4511e !important;
 }
 
 .carousel-control-prev-icon,
@@ -27,7 +30,8 @@
   width: 2rem;
   height: 2rem;
   /* 흰색 화살표 SVG에 색상 필터 적용 */
-  filter: invert(36%) sepia(85%) saturate(2216%) hue-rotate(204deg) brightness(95%) contrast(102%);
+  filter: invert(36%) sepia(85%) saturate(2216%) hue-rotate(204deg)
+    brightness(95%) contrast(102%);
 }
 .carousel-indicators [data-bs-target] {
   background-color: #333;
@@ -39,21 +43,27 @@
   /* 활성 슬라이드 색상 (더 진한 색) */
 }
 
-.my-btn{
+.my-btn {
   background-color: #f4511e;
-  color:#fff;
+  color: #fff;
 }
 
-.slideanim{
+.slideanim {
   visibility: hidden;
 }
-.slide{
+.slide {
   animation: slide 1s;
   visibility: visible;
 }
-@keyframes slide{
-  0%{opacity:0;transform:translateY(70%);}  
-  100% {opacity:1;transform:translateY(0%);}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 .card-header {
   background-color: #f4511e;

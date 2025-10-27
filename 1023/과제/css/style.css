@@ -1,3 +1,11 @@
+ul {
+  list-style: none;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
 
 .navbar {
   background-color: #ddd;
@@ -12,4 +20,58 @@
   /* background-color: #333; */
   border-bottom: 2px solid #333;
   color: #333 !important;
+}
+
+
+
+#about .txt{line-height: 1.2;}
+
+
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: transparent;
+  background-size: 100% 100%;
+  width: 2rem;
+  height: 2rem;
+  /* 흰색 화살표 SVG에 색상 필터 적용 */
+  filter: invert(36%) sepia(85%) saturate(2216%) hue-rotate(204deg)
+    brightness(95%) contrast(102%);
+}
+.carousel-indicators [data-bs-target] {
+  background-color: #333;
+
+  /* 짙은 회색 (원하는 색으로 변경 가능) */
+}
+
+.carousel-indicators .active {
+  background-color: #000;
+
+  /* 활성 슬라이드 색상 (더 진한 색) */
+}
+
+#customer ul {
+  width: 500px;
+  display: flex;
+  margin: 30px auto 0;
+  background: pink;
+}
+#customer ul li {
+  width: 50%;
+  flex: 1;
+  text-align: left;
+}
+#customer ul li img {
+  float: left;
+
+  padding: 0 20px 30px 0;
+  background: skyblue;
+  vertical-align: middle;
+}
+
+
+
+#our .txt {
+  line-height: 1.4;
 }
