@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+*{margin:0;padding:0;}
+.box{display: grid;gap: 2rem;
+margin:50px auto;/*width:80%;*/max-width: 1280px;}
+.box div{}
+.box .b1{background:pink;}
+.box .b2{background:hotpink;}
+.box .b3{background:skyblue;}
+.box .b4{background:tomato;}
+
+@media (max-width: 768px) {
+  .box {
+    grid-template-columns: 1fr; /*1*/
+    width:95%;
+  }
+}
+@media (min-width: 768px) {
+  .box {
+    grid-template-columns: 1fr 1fr; /*1대1*/
+    width:95%;
+  }
+}
+@media (min-width: 1024px) {
+  .box {
+    grid-template-columns: repeat(4, 1fr); /*4*/
+    width:95%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="b1">
+    <h2>b1</h2>
+    <p>Feel free to reach out if you want to collaborate or just want to chatFeel free to reach out if you want to collaborate or just want to chatFeel free to reach out if you want to collaborate or just want to chat</p>
+  </div>
+  <div class="b2">
+    <h2>b2</h2>
+    <p>Feel free to reach out if you want to collaborate or just want to chatFeel free to reach out if you want to
+      collaborate or just want to chatFeel free to reach out if you want to collaborate or just want to chat</p>
+  </div>
+  <div class="b3">
+    <h2>b2</h2>
+    <p>Feel free to reach out if you want to collaborate or just want to chatFeel free to reach out if you want to
+      collaborate or just want to chatFeel free to reach out if you want to collaborate or just want to chat</p>
+  </div>
+  <div class="b4">
+    <h2>b2</h2>
+    <p>Feel free to reach out if you want to collaborate or just want to chatFeel free to reach out if you want to
+      collaborate or just want to chatFeel free to reach out if you want to collaborate or just want to chat</p>
+  </div>
+</div>  
+</body>
+</html>

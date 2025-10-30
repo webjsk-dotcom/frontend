@@ -5,7 +5,9 @@ import "./index.css";
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter>  
     <App />
   </BrowserRouter>
 );
+
+// router 할때 <BrowserRouter> 꼭 붙여야함
