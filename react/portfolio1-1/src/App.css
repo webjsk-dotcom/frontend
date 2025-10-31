@@ -168,18 +168,50 @@ section{
   /* display:grid; */
   /* grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); */
   max-width:1200px;
-  height:450px;
+  /* height:450px; */
   gap:2rem;
   margin-top:3.5rem;
   display: grid;
   /* background:skyblue */
 }
 
+/* @media (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(1fr, 1fr);
+    height:;
+  }
+}
+
 @media (min-width: 768px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
   }
+} */
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;   
+    width: 95%;
+  }
 }
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;    
+   
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    /*4*/
+    width: 95%;
+  }
+}
+
+
+
 
 .card {
   background: rgba(255, 255, 255, 0.2);
@@ -189,7 +221,7 @@ section{
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  flex: 1;
+  /* flex: 1; */
 }
 
 .card:hover{
@@ -238,7 +270,8 @@ section{
   z-index: 1;
 }
 .photo_back{
-  width:100%;height:310px;
+  width:100%;
+  /* height:310px; */
   background:rgba(255,255, 255, 0.5);
   position:relative;top:-110px;
   padding-top:100px;
@@ -252,6 +285,7 @@ section{
 
 .det{text-align: left;}
 .det h3{font-size:17px;}
+
 
 
 
@@ -273,8 +307,8 @@ section{
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease,box-shadow 0.3s ease;
   height:100%;
-  display:flex;
-  flex-direction:column;
+  /* display:flex;
+  flex-direction:column; */
 }
 .portfolio-image {
   width: 100%;
