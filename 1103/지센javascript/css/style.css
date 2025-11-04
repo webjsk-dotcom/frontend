@@ -26,8 +26,6 @@ img {
   height: 100px;
 }
 
-
-/* .social */
 .header .social {
   position: relative;
   float: left;
@@ -51,8 +49,6 @@ img {
   margin-left: 0;
 }
 
-
-/* mileage_btn */
 .header .social .mileage_btn {
   margin-left: 108px;
   width: 88px;
@@ -66,14 +62,12 @@ img {
   height: 78px;
 }
 
-
-/* mobile_tab */
 .mobile_tab {
   display: none;
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 135;
+  z-index: 120;
   margin-right: 20px;
   margin-top: 15px;
   width: 28px;
@@ -84,14 +78,11 @@ img {
   width: 28px;
 }
 
-
-/* mobile_nav */
 .mobile_nav {
   /* display: none; */
   position: fixed;
   right: -220px;
   top: 0;
-  /* top:0; */
   z-index: 150;
   padding: 40px 24px;
   width: 220px;
@@ -125,15 +116,21 @@ img {
 }
 
 .mobile_nav .sub {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
 }
 
-.mobile_nav .sub>ul {
+.mobile_nav .sub.active {
+  max-height: 500px;
+}
+
+.mobile_nav .sub>li {
   height: 35px;
   border-top: 1px dotted #eaeaea;
 }
 
-.mobile_nav .sub>ul>li:first-child {
+.mobile_nav .sub>li:first-child {
   border-top: none;
 }
 
@@ -151,13 +148,6 @@ img {
   transition: background 0.3s;
 }
 
-.mobile_nav .sub li a:hover {
-  color: #b4252d;
-}
-
-
-
-/* signature */
 .header .signature img {
   width: 100%;
 }
@@ -193,7 +183,6 @@ img {
   padding-right: 0;
 }
 
-
 /* nav */
 .nav {
   position: relative;
@@ -211,7 +200,7 @@ img {
   text-align: center;
 }
 
-.nav>ul:hover {
+.nav>ul.over {
   height: 185px;
 }
 
@@ -248,7 +237,6 @@ img {
   margin-left: 30px;
   padding-top: 14px;
   width: 100%;
-  /* background:pink */
 }
 
 .nav>ul>li:first-child .sub {
@@ -294,7 +282,7 @@ img {
   display: block;
 }
 
-@media screen and (max-width:1050px) {
+@media screen and (max-width: 1050px) {
   .header {
     width: 826px;
   }
@@ -310,22 +298,22 @@ img {
   .nav li:nth-child(5) a {
     padding-right: 0;
   }
-
 }
 
-@media screen and (max-width:850px) {
+@media screen and (max-width: 850px) {
   .header {
     width: auto;
+    /*width:100%;*/
     height: 72px;
-  }
-
-  .mileage_btn {
-    display: none;
   }
 
   .header .social {
     margin: 23px 0 24px 20px;
     width: 90px;
+  }
+
+  .header .social .mileage_btn {
+    display: none;
   }
 
   .header .signature {
@@ -343,7 +331,7 @@ img {
     display: none;
   }
 
-  /* 오른쪽 lnb메뉴 숨김 */
+  /* 오른쪽 lnb 메뉴 숨김 */
   .mobile_tab {
     display: block;
   }
@@ -355,22 +343,21 @@ img {
   .hero {
     margin-top: 0;
   }
-
 }
 
-@media screen and (max-width:354px) {
+@media screen and (max-width: 350px) {
   .header .social {
     display: none;
   }
 
   .header .signature {
     left: 0;
-    top: 0;
+    top: 0p;
     margin-left: 12px;
   }
 }
 
-/* 전체 영역이 움직이는 컨테이너 제작 */
+/* 전체 영역이 움지이는 컨테이너 제작    */
 .container {
   position: relative;
   left: 0;

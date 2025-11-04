@@ -68,11 +68,11 @@ img {
 
 /* mobile_tab */
 .mobile_tab {
-  /* display: none; */
+  display: none;
   position: absolute;
   right:0;
   top:0;
-  z-index: 120;
+  z-index: 135;
   margin-right:20px;
   margin-top:15px;
   width:28px;
@@ -88,6 +88,7 @@ img {
   /* display: none; */
   position:fixed;
   right:-220px;
+  top:0;
   /* top:0; */
   z-index: 150;
   padding:40px 24px;
@@ -199,7 +200,10 @@ img {
   background: url(../images/bg_gnb.gif) repeat-x 0 0;
   text-align: center;
 }
-.nav>ul:hover{
+/* .nav>ul:hover {
+  height: 185px;
+} */
+.nav>ul.over{
   height:185px;
 }
 
@@ -255,3 +259,100 @@ img {
 .nav .sub a:hover {
   text-decoration: underline;
 }
+
+/* hero */
+.hero{
+  margin-top:54px;
+}
+.hero img{
+  width:100%;
+  height:auto;
+}
+.transparency{
+  display: none;
+  position:fixed;
+  left:0;
+  top:0;
+  z-index: 130;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.4);
+}
+.transparency.active{
+  display: block;
+}
+
+@media screen and (max-width:1050px) {
+  .header{
+    width:826px;
+  }
+  .header .signature{
+    margin-left:146px;
+  }
+  .nav li:nth-child(6){
+    display: none;
+  }
+  .nav li:nth-child(5) a{
+    padding-right:0;
+  }
+
+}
+
+@media screen and (max-width:850px) {
+  .header{
+    width:auto;
+    height:72px;
+  }
+  .mileage_btn {
+    display: none;
+  }
+  .header .social{
+    margin:23px 0 24px 20px;
+    width:90px;
+  }
+  .header .signature{
+    position:absolute;
+    left:50%;
+    top:0;
+    float: none;
+    margin-left:-50px;
+    width:100px;
+    height:54px;
+    /* 로고 정중앙 */
+  }
+  .header .location{
+    display: none;
+  }
+  /* 오른쪽 lnb메뉴 숨김 */
+  .mobile_tab{
+    display: block;
+  }
+  .nav{
+    display: none;
+  }
+  .hero{
+    margin-top:0;
+  }
+  
+}
+
+@media screen and (max-width:354px) {
+  .header .social{
+    display: none;
+  }
+  .header .signature{
+    left:0;
+    top:0;
+    margin-left:12px;
+  }
+}
+/* 전체 영역이 움직이는 컨테이너 제작 */
+.container{
+  position:relative;
+  left:0;
+  transition:left 0.4s ease-out;
+}
+.container.active{
+  left:-220px;
+}
+
