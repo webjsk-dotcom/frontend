@@ -39,7 +39,7 @@ export default function App() {
     setTransparencyActive(false);
   };
   
-// handleNavMouseEnter click
+
   const handleNavMouseEnter = () => {
     setNavOver(true);
   };
@@ -207,8 +207,8 @@ export default function App() {
       {/* nav end */}
 
       <div className="hero"><img src="images/hero.jpg" alt="" /></div>  
-    </div>
-    {/* container end */}
+    {/* </div>
+    container end */}
 
     <div 
       className={`transparency ${transparencyActive ? 'active' : ''}`}
@@ -387,6 +387,8 @@ export default function App() {
     </footer>
     {/* footer end */}
 
+  </div>
+  {/* container end */}
     </>
   );
 }
