@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+// import axios from 'axios';
 import './App.css'
 
 const API_KEY = 'e7e22754a4b44d874f2f4c8ad2917730'
@@ -12,7 +12,7 @@ export default function App() {
   const [error, setError] = useState('');
 
 
-  const axiosWeather = async(cityName) => {   //fetchWeather -> axiosWeather 
+  const fetchWeather = async(cityName) => {   //fetchWeather -> axiosWeather 
     if(!cityName.trim()){
       setError("도시 이름을 입력해주세요");
       return;
@@ -21,10 +21,17 @@ export default function App() {
     setLoading(true)
     setError('')
     try{
-      const response = await axios.get(
+      const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric&lang=kr`
       );
-      setWeather(response.data);
+      // http오류체크 추가
+      if(!response.ok){
+        throw new Error(`Http error 1 status:${response.status}`);
+      }
+      // Json 파싱
+      const data = await response.json() //fetch에서는 이게 꼭 들어가야함 자동json안됨
+
+      setWeather(data);
       setError("");
     }catch(err){
       console.error("날씨 API 오류 :", err);
@@ -37,12 +44,12 @@ export default function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axiosWeather(city)
+    fetchWeather(city)
   }
 
   // 초기로드시 서울 날씨 가져오기
   useEffect(() => {
-    axiosWeather("Seoul");
+    fetchWeather("Seoul");
   }, []);
 
 
