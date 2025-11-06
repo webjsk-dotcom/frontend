@@ -27,8 +27,8 @@ const mockTodo = [
 ]
 
 export default function App() {
-  const [todo, setTodo] = useState(mockTodo);
-  const idRef = useRef(3);
+  const [todo, setTodo] = useState(mockTodo);  //({mockTodo가 관리 })
+  const idRef = useRef(3);  //({새로 시작할 초기값})
 
   const onCreate = (content) => {
     const newItem = {
@@ -50,7 +50,7 @@ export default function App() {
       // }else{
       //   return it;   
       // } 아래 삼항 한줄로 줄일수있아 
-      return it.id === targetId ? {...it, isDone : !it.isDone} : it
+      return it.id === targetId ? {...it, isDone : !it.isDone} : it  
       
       //기존상태가 {id:1, content:"빨래하기",isDone:false} //기존
       //기존상태가 {id:1, content:"빨래하기",isDone:false} //update 실행후

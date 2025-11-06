@@ -21,6 +21,7 @@ export default function TodoEditor({onCreate}) {
     if(!content){    //아무것도 없으면 커서 깜박거리고 나와
       inputRef.current.focus();
       return;
+      // 내용이 없으면 다시 인풋창에 클릭
     }
     onCreate(content);
     setContent("");  //초기화 빈문자
