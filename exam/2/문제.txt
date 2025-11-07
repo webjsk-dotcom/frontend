@@ -1,0 +1,28 @@
+
+1. counter    react - test1  useState        ex02
+problem1-counter  이거 수정해서 제출 (글자칼라 등등)
+
+2. 오늘할일
+todo,  
+todoup    useReducer 이용해 추가
+
+exem02_todo   소스 줌 복붙   이거로 하면 20점
+TodoUseMemo  이거로 하면 됨
+
+3.  react - fetch ,  Axios ?
+ [문제 3: 사용자 목록 조회](#문제-3-사용자-목록-조회) 
+
+검색포함하면 가산점
+
+
+4. 회원가입  회원관리창   nember form      react - ex04
+그대로하면 20
+항목추가하면 25  전화번호?
+
+-------------------------------
+1번은 다시 열어서 정리 (디자인바꿈)
+2번, 3번  정리후 (디자인 바꾸기)
+4번 디자인바꾸기
+
+
+2번 exem02_todo, TodoUseMemo  둘중고르기

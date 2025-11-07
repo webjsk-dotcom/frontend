@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './App.css'
 
 export default function App() {
 
@@ -11,8 +12,7 @@ export default function App() {
     phone:"",
   });
 
-  // touched 상태 (사용자가 필드를 건드렸는지)   (처음엔 false 줘서 나중에는 true로 바뀌게)    (초기화)
-  // 처음부터 에러를 보여주지 않기위해
+  
   const [touched, setTouched] = useState({
     email:false,
     password:false,
@@ -21,47 +21,36 @@ export default function App() {
     phone:false,
   });
 
-  // 비밀번호 보기 / 숨기기 상태 (보너스)
-  const [showPassword, setShowPassword] = useState(false);  //(비밀번호를 보여줄지 안보여줄지)
- 
-
+  // 비밀번호 보기 / 숨기기 상태 
+  const [showPassword, setShowPassword] = useState(false);  
 
   // 유효성 검사 함수들
   const validateEmail = (email) => {   //
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  //(email 유효성검사 구글에서 검색,엄청나옴), @[^\s@]+(도메인)
-    // username 은 공백이나 @를 포함할수 없고, 하나이상의 문자가 존재
-    // domain도 공백과 @를 제외한 문자로 이루어져야 합니다.
-    // extention 은 공백과 @를 제외한 문자로 이루어져야 하며, 마침표로 구분
-    return emailRegex.test(email);
-    // text 정규표현식 메서드 -> 일치하면 true 하지않으면 false 반환
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;      
+    return emailRegex.test(email);   
   };
 
   const validatePassword = (password) => {
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-    return passwordRegex.test(password); //email??  password??
+    return passwordRegex.test(password); 
   };
 
   const validateName = (name) => {
     return name.trim().length >= 2;
   };
 
-
-   //전화번호 추가
-  // 🔹 유효성 검사 전화번호   
+  //전화번호 추가  
   const validatePhone = (e) => {
     const cleaned = e.replace(/-/g, '');
-    const phoneRegex = /^01[0-9]{8,9}$/; // 010~019 + 8~9자리
+    const phoneRegex = /^01[0-9]{8,9}$/;    
     return phoneRegex.test(cleaned);
   };
 
 
 
-
-  // 에러메세지 생성    ({(false 가 반환되면 에러메세지)   에러없으면 (아래 폼유효성 검사로 이동)})
   const getErrors = () => {
     const errors = {}
-    // 빈객체 배열 생성 -> 에러발생시 {} 저장
-    if(touched.email && !validateEmail(formData.email)){  //({flase 에러메세지가 오면})
+    if(touched.email && !validateEmail(formData.email)){  
       errors.email = '올바른 이메일 형식이 아닙니다.';
     }
 
@@ -70,7 +59,7 @@ export default function App() {
     }
 
     if(touched.confirmPassword && formData.password !== formData.confirmPassword){    
-      errors.confirmPassword = '비밀번호가 일치하지 않습니다.';
+      errors.name = '비밀번호가 일치하지 않습니다.';
     }
 
     if(touched.name && !validateName(formData.name)){
@@ -86,12 +75,6 @@ export default function App() {
   const errors = getErrors();
 
 
-  // 전화번호 추가
-  // const [formatPhone, setFormatPhone] = useState();
-
-
-
-
   // 폼 유효성 검사(모든 필드가 유효한지)
   const isFormValid = () => {
     return (
@@ -103,19 +86,14 @@ export default function App() {
     );
   };
 
-  // 입력 변경 핸들러(입력창 여러개 실시간 입력반영)
   const handleChange = (e) => {
     const {name,value} = e.target;
-    // e.target 이벤트가 발생한 HTML 요소
-    // name 속성과 value 속성을 구조 분해 할당
-    setFormData({       //({input 창이 여러개있으면 하나있음 필요없음.})
-      ...formData,   //({기본에 데이터가 기억하고 새로운값 입력(꼭필요)})
+    setFormData({      
+      ...formData,   
       [name]: value,
     });
   };
 
-  // 블러 핸들러 (필드에서 포커스가 벗어날 때)
-  // 사용자가 이메일 필드에 입력하고 떠남 -> Touched.email = true   ({쓰고난다음})
   const handleBlur = (e) => {
     const { name } = e.target;
     setTouched({
@@ -126,31 +104,10 @@ export default function App() {
 
 
 
-  // //전화번호 추가
-  // const formatPhone = (e) => {
-  
-  //   // 숫자만 남기기
-  //   const numbers = e.replace(/\D/g, '');
-  //   // 01012345678 → 010-1234-5678 형태로 변환
-  //   if (numbers.length < 4) return numbers;
-  //   if (numbers.length < 8) return `${numbers.slice(0, 3)}-${numbers.slice(3)}`;
-  //   return `${numbers.slice(0, 3)}-${numbers.slice(3, 7)}-${numbers.slice(7, 11)}`;
-  // };
-
-  // // 🔹 유효성 검사 전화번호   **추가
-  // const validatePhone = (e) => {
-  //   const cleaned = e.replace(/-/g, '');
-  //   const phoneRegex = /^01[0-9]{8,9}$/; // 010~019 + 8~9자리
-  //   return phoneRegex.test(cleaned);
-  // };
-
-
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if(isFormValid()){   //({true 여야만})
+    if(isFormValid()){   
       alert(`회원가입 성공!!\n\n이름: ${formData.name}\n이메일: ${formData.email}\n전화번호: ${formData.phone}`)
       console.log('회원가입 데이터', formData);
 
@@ -190,16 +147,15 @@ export default function App() {
               onBlur={handleBlur}
               style={{
                 ...styles.input,
-                borderColor:errors.email ? "#dc3545" : "#ddd", 
+                borderColor:errors.email ? "#dc3545" : "#cde8f3", 
               }}
-              placeholder='exemple@email.com' 
-              // style={styles.input} 
+              placeholder='exemple@email.com'               
             />
             {errors.email && (
               <p style={styles.errorText}> ❌ {errors.email}</p>
             )}
             {touched.email && !errors.email && formData.email &&(
-              <p style={styles.successText}> ✅ 올바른 이메일 형식입니다</p>
+              <p style={styles.successText}> ✔ 올바른 이메일 형식입니다</p>
             )}
           </div>
 
@@ -215,7 +171,7 @@ export default function App() {
                 onBlur={handleBlur}
                 style={{
                   ...styles.input,
-                  borderColor: errors.password ? '#dc3545' : '#ddd'
+                  borderColor: errors.password ? '#dc3545' : '#cde8f3'
                 }}
                 placeholder="8자 이상, 영문+숫자"
               />
@@ -232,7 +188,7 @@ export default function App() {
               <p style={styles.errorText}>❌ {errors.password}</p>
             )}
             {touched.password && !errors.password && formData.password && (
-              <p style={styles.successText}>✅ 안전한 비밀번호입니다</p>
+              <p style={styles.successText}>✔ 안전한 비밀번호입니다</p>
             )}
           </div>
 
@@ -248,16 +204,15 @@ export default function App() {
               onBlur={handleBlur}
               style={{
                 ...styles.input,
-                borderColor: errors.password ? '#dc3545' : '#ddd'
-              }}
-              // style={styles.input} 
+                borderColor: errors.password ? '#dc3545' : '#cde8f3'
+              }}              
             />
 
             {errors.confirmPassword && (
               <p style={styles.errorText}>❌ {errors.confirmPassword}</p>
             )}
             {touched.confirmPassword && !errors.confirmPassword && formData.confirmPassword && (
-              <p style={styles.successText}>✅ 비밀번호가 일치합니다.</p>
+              <p style={styles.successText}>✔ 비밀번호가 일치합니다.</p>
             )}
           </div>
 
@@ -273,7 +228,7 @@ export default function App() {
               value={formData.name}
               style={{
                 ...styles.input,
-                borderColor: errors.name ? '#dc3545' : '#ddd'
+                borderColor: errors.name ? '#dc3545' : '#cde8f3'
               }}             
             />
 
@@ -281,7 +236,7 @@ export default function App() {
               <p style={styles.errorText}>❌ {errors.name}</p>
             )}
             {touched.name && !errors.name && formData.name && (
-              <p style={styles.successText}>✅ 유효한 이름입니다</p>
+              <p style={styles.successText}>✔ 유효한 이름입니다</p>
             )}
           </div>
 
@@ -298,7 +253,7 @@ export default function App() {
               value={formData.phone}
               style={{
                 ...styles.input,
-                borderColor: errors.phone ? '#dc3545' : '#ddd'
+                borderColor: errors.phone ? '#dc3545' : '#cde8f3'
               }}              
             />
 
@@ -307,7 +262,7 @@ export default function App() {
               <p style={styles.errorText}>❌ {errors.phone}</p>
             )}
             {touched.phone && !errors.phone && formData.phone && (
-              <p style={styles.successText}>✅ 올바른 전화번호입니다.</p>
+              <p style={styles.successText}>✔ 올바른 전화번호입니다.</p>
             )}
           </div>
 
@@ -318,7 +273,7 @@ export default function App() {
             disabled={!isFormValid()}
             style={{
               ...styles.submitButton,
-              backgroundColor: isFormValid() ? '#28a745' : '#ccc',
+              backgroundColor: isFormValid() ? '#6099e8' : '#afdcee',
               cursor: isFormValid() ? 'pointer' : 'not-allowed'
             }}
           >가입하기</button>
@@ -334,8 +289,8 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    minHeight: '100vh',
-    backgroundColor: '#f0f2f5',
+    minHeight: '100vh',    
+    background: 'linear-gradient(135deg, #c0e3f1,  #b6bbec)',
     padding: '2rem',
     fontFamily: 'Arial, sans-serif',
   },
@@ -345,7 +300,7 @@ const styles = {
     padding: '2.5rem',
     boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
     width: '100%',
-    maxWidth: '500px',
+    maxWidth: '500px',    
   },
   title: {
     textAlign: 'center',
@@ -371,10 +326,11 @@ const styles = {
   input: {
     padding: '12px',
     fontSize: '1rem',
-    border: '2px solid #ddd',
+    border: '2px solid #c0e3f1',
     borderRadius: '5px',
     outline: 'none',
     transition: 'border-color 0.3s',
+    color:'#333',
   },
   passwordContainer: {
     position: 'relative',
@@ -396,7 +352,7 @@ const styles = {
     margin: '0.5rem 0 0 0',
   },
   successText: {
-    color: '#28a745',
+    color: '#6099e8',
     fontSize: '0.875rem',
     marginTop: '0.5rem',
     margin: '0.5rem 0 0 0',
@@ -404,8 +360,7 @@ const styles = {
   submitButton: {
     padding: '14px',
     fontSize: '1.1rem',
-    color: 'white',
-    // color: '#555',
+    color: 'white',    
     border: 'none',
     borderRadius: '5px',
     marginTop: '1rem',
