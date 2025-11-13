@@ -1,0 +1,26 @@
+**2. 모바일 메뉴 내 링크 클릭**
+```typescript
+const handleMobileLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
+  const target = event.currentTarget
+  if (target.closest('.mobile-nav')) {
+    setIsMobileNavOpen(false)  // 메뉴 닫기
+    setExpandedMobileItem(null)  // 서브메뉴도 닫기
+  }
+}
+```
+- 모바일 메뉴 내의 어떤 링크를 클릭해도 메뉴가 자동으로 닫힘
+- 사용자가 페이지를 이동했으므로 메뉴를 닫아야 함
+
+### 🔗 사용되는 곳
+
+**1. 햄버거 버튼의 접근성 속성**
+```typescript
+<button
+  type="button"
+  className="mobile-nav-toggle"
+  aria-expanded={isMobileNavOpen}
+  onClick={toggleMobileNav}
+>
+```
+- `aria-expanded` 속성으로 스크린 리더에 메뉴 상태를 알림
+- `true`: 메뉴가 열려 있음, `false`: 메뉴가 닫혀 있음

@@ -1,0 +1,5 @@
+`SiteNav` 컴포넌트는 총 **3개의 state**를 사용하여 데스크톱 메가메뉴와 모바일 아코디언 메뉴를 제어합니다.
+
+1. `hoveredItem` - 데스크톱 메가메뉴 제어
+2. `isMobileNavOpen` - 모바일 메뉴 열림/닫힘 제어
+3. `expandedMobileItem` - 모바일 아코디언 서브메뉴 제어

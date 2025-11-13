@@ -1,0 +1,31 @@
+#### State 업데이트 시점
+
+**1. 아코디언 버튼 클릭**
+```typescript
+const handleMobileItemToggle = (label: string) => {
+  setExpandedMobileItem((prev) => (prev === label ? null : label))
+}
+```
+- 아코디언 토글 버튼을 클릭하면:
+  - **현재 펼쳐진 항목을 다시 클릭**: `null`로 설정 (접힘)
+  - **다른 항목 클릭**: 해당 항목의 `label`로 설정 (펼침)
+- 한 번에 하나의 서브메뉴만 열릴 수 있음 (아코디언 방식)
+
+**2. 햄버거 메뉴 열 때**
+```typescript
+const toggleMobileNav = () => {
+  setIsMobileNavOpen((prev) => !prev)
+  setExpandedMobileItem(null)  // 모든 서브메뉴 닫기
+}
+```
+- 햄버거 메뉴를 열 때마다 모든 서브메뉴를 닫은 상태로 시작
+
+**3. 모바일 메뉴 내 링크 클릭 시**
+```typescript
+const handleMobileLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
+  const target = event.currentTarget
+  if (target.closest('.mobile-nav')) {
+    setIsMobileNavOpen(false)
+    setExpandedMobileItem(null)  // 모든 서브메뉴 닫기
+  }
+}
