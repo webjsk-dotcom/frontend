@@ -1,0 +1,9 @@
+**1. 햄버거 버튼 클릭**
+```typescript
+const toggleMobileNav = () => {
+  setIsMobileNavOpen((prev) => !prev)
+  setExpandedMobileItem(null)  // 서브메뉴도 모두 닫음
+}
+```
+- 햄버거 메뉴 버튼을 클릭하면 이전 값의 반대로 토글
+- 메뉴를 열 때는 모든 서브메뉴를 닫은 상태로 시작 (`expandedMobileItem = null`)
