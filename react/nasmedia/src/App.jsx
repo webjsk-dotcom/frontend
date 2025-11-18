@@ -29,7 +29,7 @@ export default function App() {
   // 현재 활성화된 섹션 인덱스(0~5)?
 
   const wheelLock = useRef(false);
-  // const touchStartY = useRef(null);
+  const touchStartY = useRef(null);
 
   
   const changeSection = useCallback((next)=>{
@@ -62,7 +62,40 @@ export default function App() {
     }, 1000);
   });
   
-  // 현재 활성화된 섹션 인덱스(0~5)?
+
+  // TouchMove -------------------------------
+  // 모바일터치부분
+  const handelTouchStart = useCallback((event)=>{
+    if(isMenuOpen || showIntro) return; //메뉴가 열려 있을때나 인트로중에는 무시
+    touchStartY.current = event.touches[0].clientY;
+    //현재는 첫번째 터치만 처리     ({[0]첫번째})
+  },[isMenuOpen, showIntro]);
+
+  
+  // 위 터치하고 밀기(move)
+  const handelTouchMove = useCallback((event)=>{
+    if(touchStartY.current==null || wheelLock.current || isMenuOpen || showIntro) return;
+    // 시작위치가 없거나 , 잠금, 메뉴 보이거나, 인트로 상태에서는 빠져나감
+
+    const currentY = event.touches[0].clientY;
+    const delta = touchStartY.current = currentY;
+    if(Math.abs(delta) < 50){
+      return;
+    }
+    wheelLock.current = true;
+    changeSection((prev) => (delta > 0 ? prev + 1 : prev - 1));
+    window.setTimeout(() => {
+      wheelLock.current = false;
+    }, 1000);
+    touchStartY.current = null;
+  },[isMenuOpen, showIntro, changeSection]);
+
+  const handleTouchEnd = useCallback(() => {
+    touchStartY.current = null;
+  }, []);
+  
+
+  // 수직으로 100% 1초만에 이동
   const fullCoverStyle = useMemo(()=>({
     transform: `translateY(-${activeSection * 100}vh)`,
     transition: "transform 1s ease",
@@ -86,7 +119,12 @@ export default function App() {
         onSelect={(index) => changeSection(() => index)}
       />
 
-      <div id="fullpage" onWheel={handleWheel}>
+      <div id="fullpage" 
+      onWheel={handleWheel} 
+      onTouchStart={handelTouchStart} 
+      onTouchMove={handelTouchMove}
+      onTouchEnd={handleTouchEnd}
+      >
         <div className="full_cover" style={fullCoverStyle}>
           <SectionOne />
           <SectionTwo />
