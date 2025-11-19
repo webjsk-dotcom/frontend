@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './styles/subway.css'
 
 
+// nav menu
 const navMenus = [
   {
     label : '메뉴소개',
@@ -34,7 +35,8 @@ const heroSlides = ['i_01','i_02','i_03','i_04'];
 // 메인슬라이더 이미지 클래스 배열명 
 
 
-// contents tab --------------- Subway's Menu
+
+// contents tab --------------- Subway's Menu  // section01
 
 // 클래식, 프레쉬&라이트, 프리미엄, 아침메뉴, 4개의 카테고리
 // 아이템데이터 -> 각아이템 name, image, description(문자열 배열)
@@ -185,6 +187,23 @@ const menuCategories = [
 ];
 
 
+// section03
+const whatsNew = [
+  '써브웨이 2020년 3월 가격 인상 안내',
+  "써브웨이와 함께하는 tvN '금요일금요일밤에'",
+  '세브웨이고객센터 2020년 설 연휴 휴뮤 안내'
+];
+
+
+// footer
+const footerLinks = [
+  '이용약관',
+  '개인정보취급방침',
+  '점주관리자',
+  'Subway Listens'
+];
+
+
 export default function App() {
   const sliderRef = useRef(null);  //({버튼접근할때})
   const [activeMenuIndex, setActiveMenuIndex] = useState(0);
@@ -324,6 +343,123 @@ export default function App() {
           <a href="#" className='next'>next</a>
         </div> {/* s02_wrap e */}
       </section>
+
+
+      {/* section03 -------------------- */}
+      <section id="section03">
+        <div className="s03_wrap">
+          <div className="content con_top">
+            <div className="cont_01">
+              <h3>
+                서브웨이를
+                <br />
+                제대로 즐기는 방법!
+              </h3>
+              <a href="#" className="con_a">
+                이용방법
+              </a>
+            </div>
+            <div className="cont_02">
+              <h3>
+                50년 역사를 가진
+                <br />
+                No.1 프랜차이즈의 성장기
+              </h3>
+              <a href="#" className="con_a">
+                서브웨이 역사
+              </a>
+            </div>
+          </div>{/* content con_top e */}
+
+          <div className="content con_bott">
+            <div className="cont_03">
+              <div className="new">
+                <h2>What&apos;s New</h2>
+                <p>
+                  써브웨이의 다양한 소식을
+                  <br />
+                  빠르게 전달해드립니다.
+                </p>
+              </div>
+
+              <ul>
+                {whatsNew.map((item) => (
+                  <li key={item}>
+                    <a href="#">{item}</a>
+                  </li>
+                ))}
+                <li className="more">
+                  <a href="#">more</a>
+                </li>
+              </ul>
+            </div>
+            <div className="cont_04"></div>
+          </div>
+        </div>{/* s03_wrap e */}
+      </section>
+
+
+      {/* section04 -------------------- */}
+      <section id="section04">
+        <ul className="cf">
+          <li>
+            <a href="#">
+              <div className="icon1"></div>
+              <p className="tit">프렌차이즈</p>
+              <p className="txt">개설절차/투자비용 정보</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div className="icon2"></div>
+              <p className="tit">자사안내</p>
+              <p className="txt">수도권/지방 지사정보</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div className="icon3"></div>
+              <p className="tit">광고영상</p>
+              <p className="txt">TV광고/동영상</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div className="icon4"></div>
+              <p className="tit">1:1문의</p>
+              <p className="txt">개선/문의사항</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+
+      {/* footer -------------------- */}
+      <footer>
+        <ul className="footer_wrap cf">
+          {footerLinks.map((link, index) => (
+            <li key={link}>
+              <a href="#" className={index === 1 ? 'sp' : undefined}>  {/*sp는 클래스*/}
+                {link}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="copyright">
+          <ul>
+            <li>서울시 서초구 강남대로 535 프린스빌딩 15층</li>
+            <li>대표: 콜린클락</li>
+            <li>전화 : 02-797-5036</li>
+            <li>사업자등록번호 : 101-84-04143</li>
+          </ul>
+          <p>
+            SUBWAY® is a Registered Trademark of Subway IP LLC. © 2019 Subway IP LLC. All Rights Reserved.
+          </p>
+          <div className="instar"></div>
+          <div className="facebook"></div>
+        </div>
+      </footer>
 
     </div>
     // 전체감싸는 div
