@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
   
-export default function BasicSlider() {
+export default function CustomNavSlider() {
   const settings = {
     dots:true,
     arrows:true,
@@ -12,8 +12,10 @@ export default function BasicSlider() {
     speed:500,
     slidesToShow:1,
     slidesToScroll:1,
-    autoplay:false,
-    className:"basic-slider",
+    autoplay:true,
+    autoplaySpeed:3000,
+    pauseOnHover:true,
+    className:"custom-nav-slider",
   };
 
   const slides = [
@@ -21,7 +23,6 @@ export default function BasicSlider() {
     { id: 2, text: 'Slide 2', image: '/images/slide2.jpg' },
     { id: 3, text: 'Slide 3', image: '/images/slide3.jpg' },
     { id: 4, text: 'Slide 4', image: '/images/pic_1.jpg' },
-    { id: 5, text: 'Slide 5', image: '/images/pic_2.jpg' }
   ];
 
   return (

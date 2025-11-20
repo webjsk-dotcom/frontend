@@ -3,25 +3,25 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-  
-export default function BasicSlider() {
+export default function FadeSlider() {
+
   const settings = {
     dots:true,
     arrows:true,
     infinite:true,
     speed:500,
-    slidesToShow:1,
-    slidesToScroll:1,
-    autoplay:false,
-    className:"basic-slider",
+    fade:true,
+    cssEase:'linear',  //일정한속도
+    autoplay:true,
+    autoplaySpeed:3000,
+    className:"fade-slider",
   };
 
   const slides = [
-    { id: 1, text: 'Slide 1', image: '/images/slide1.jpg' },
-    { id: 2, text: 'Slide 2', image: '/images/slide2.jpg' },
-    { id: 3, text: 'Slide 3', image: '/images/slide3.jpg' },
-    { id: 4, text: 'Slide 4', image: '/images/pic_1.jpg' },
-    { id: 5, text: 'Slide 5', image: '/images/pic_2.jpg' }
+    { id: 1, text: 'Fade 1', image: '/images/tree-1.jpg' },
+    { id: 2, text: 'Fade 2', image: '/images/tree-2.jpg' },
+    { id: 3, text: 'Fade 3', image: '/images/tree-3.jpg' },
+    { id: 4, text: 'Fade 4', image: '/images/tree-4.jpg' },
   ];
 
   return (
@@ -41,4 +41,3 @@ export default function BasicSlider() {
     </Slider>
   )
 }
-
