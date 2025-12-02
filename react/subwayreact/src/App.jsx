@@ -238,6 +238,7 @@ export default function App() {
             <li><a href="#" className='earth' aria-label='언어 변경'></a></li>
           </ul>
         </div>
+        {/* h_top e */}
 
         <nav>
           <ul>

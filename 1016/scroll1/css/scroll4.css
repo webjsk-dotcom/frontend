@@ -66,13 +66,13 @@ nav ul li.on a{
   padding: 50px;
   background-color: #fff;
   text-align: center;
-  top: 50px;
+  top: 150px;
   left: -350px;
   transition: all 0.3s;
 }
 
 .section2 .left1.on{
-  left: 100px;
+  left: 150px;
 }
 
 .section2 .right1{
@@ -80,10 +80,11 @@ nav ul li.on a{
   padding: 50px;
   background-color: #fff;
   text-align: center;
-  bottom: 50px;
+  bottom: 150px;
   right: -350px;
   transition: all 0.3s;
 }
+
 
 .section2 .right1.on{
   right: 100px;
@@ -94,6 +95,7 @@ nav ul li.on a{
   background: url(../img/b3.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
+
 
 .section4{
   background: url(../img/b4.jpg) no-repeat 50% 50%;

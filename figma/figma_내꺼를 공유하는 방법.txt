@@ -1,0 +1,23 @@
+① Share 버튼 클릭
+
+오른쪽 상단 Share 클릭 → 지금 보여주신 창이 뜸.
+
+② Anyone 권한을 “can view”로 설정
+
+"Who has access" 아래의
+Anyone → can view
+로 되어 있으면 OK.
+
+✔ *복제(Duplicate)*는 view 권한만 있어도 가능합니다.
+
+③ 오른쪽 상단 Copy link 버튼 클릭
+
+이게 예전의 Get link 역할
+
+복사된 링크를 다른 사람에게 보내면 됨
+
+④ 상대방은 링크를 열고…
+
+화면 상단에
+“Duplicate to your drafts” (내 Draft로 복제)
+버튼이 자동으로 나타납니다.

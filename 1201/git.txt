@@ -1,0 +1,140 @@
+
+
+$ git branch sub
+branch 새로운 작업에 다른 작업을 하고싶다
+
+
+$ git branch
+안에 내용 보여줌
+
+$ git switch sub
+sub 로 가고싶을때
+
+$ git switch main
+main 로 가고싶을때
+
+
+
+왔다갔다 함  switch  요즘 더 씀
+$ git checkout main
+$ git checkout sub
+
+
+$ git log --oneline
+
+$ git log  과거 내용 다 나옴
+
+
+강제로  
+$ git reset --hard HEAD~1
+HEAD~1  전꺼 강제로 리셋(하나전꺼) 지워짐 vs에서만 git 원본남음
+
+$ git push origin main --force  강제업데이트(git원본까지 삭제)
+
+origin  -> git이다
+
+
+
+$ git merge sub  ->  삭제됬던 vs 다시 올라옴
+내컴에는 살리고 싶다.
+
+$ git push origin main   -> git 에 다시 살려 올리겠다
+
+
+sub 지우기
+$ git branch -d sub
+
+$ git branch   -> 확인하면 main 만 남음 
+* main
+
+-----------------------  여러군데에서 올리기 다운받기
+C:\test1> git pull
+git add .
+git push
+
+---------------
+PS C:\test1> git add .
+PS C:\test1> git commit - m "conf1"
+PS C:\test1> git push
+
+
+PS C:\test1> git add .
+PS C:\test1> git commit -m "L1"
+PS C:\test1> git push
+
+----------------- 오후
+git branch
+
+C:\Users\tj\Desktop\test2> git branch dev
+
+git branch   
+
+C:\Users\tj\Desktop\test2> git push
+
+C:\Users\tj\Desktop\test2> git push --set-upstream origin dev
+
+둘중하나 switch 추천 요즘
+C:\Users\tj\Desktop\test2> git checkout dev
+C:\Users\tj\Desktop\test2> git switch dev  
+
+PS C:\Users\tj\Desktop\test2> git branch one
+PS C:\Users\tj\Desktop\test2> git branch two
+PS C:\Users\tj\Desktop\test2> git branch three
+
+ C:\Users\tj\Desktop\test2> git branch  확인
+* dev
+  one
+  three
+  two
+
+
+
+C:\Users\tj\Desktop\test2> git checkout one
+[Switched to branch 'one'   -> 결과메시지 -  one 이동- ]
+
+PS C:\Users\tj\Desktop\test2> git add .
+PS C:\Users\tj\Desktop\test2> git commit -m "one"
+
+ C:\Users\tj\Desktop\test2> git push
+[메시지 확인]
+
+[git push 하면 안올라감 메시지에 있는거 다시 git함 아래]
+C:\Users\tj\Desktop\test2> git push --set-upstream origin one
+
+
+
+C:\Users\tj\Desktop\test2> git branch
+[* one ]  메시지 확인
+
+PS C:\Users\tj\Desktop\test2> git checkout dev  
+
+
+
+C:\Users\tj\Desktop\test2> git branch -d one   ->  -d 삭제
+
+
+PS C:\Users\tj\Desktop\test2> git checkout two 
+
+two.txt  --> 파일만들기 
+
+PS C:\Users\tj\Desktop\test2> git add .
+PS C:\Users\tj\Desktop\test2> git commit -m "two"
+
+C:\Users\tj\Desktop\test2> git push
+[메시지 결과 ]
+
+[git push 하면 안올라감 메시지에 있는거 다시 git함 아래]
+C:\Users\tj\Desktop\test2> git push --set-upstream origin two
+
+
+C:\Users\tj\Desktop\test2> git checkout dev
+
+ C:\Users\tj\Desktop\test2> git checkout -d two
+
+
+
+
+
+
+
+

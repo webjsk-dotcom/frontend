@@ -30,6 +30,7 @@ $(function(){
       $('.right1').removeClass('on');
     }
 
+    
     if(sct >= 2500){
       // $('.s4_1').addClass('active')
       // $('.s4_2').addClass('active')

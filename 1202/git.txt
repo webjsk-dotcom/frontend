@@ -1,0 +1,172 @@
+오후 12:33 2025-12-02
+
+C:\Users\tj\Desktop\test2> git branch
+
+PS C:\Users\tj\Desktop\test2> git switch dev
+
+PS C:\Users\tj\Desktop\test2> git pull
+
+
+
+C:\Users\tj\Desktop\test2> git checkout dev
+
+PS C:\Users\tj\Desktop\test2> git branch      
+* 6-four-할일
+  dev
+  main
+  three
+  two
+
+
+C:\Users\tj\Desktop\test2> git branch -d 6-four-할일
+
+PS C:\Users\tj\Desktop\test2> git pull
+
+만들기
+PS C:\Users\tj\Desktop\test2> git branch conf1
+PS C:\Users\tj\Desktop\test2> git branch conf2
+
+보기
+PS C:\Users\tj\Desktop\test2> git branch      
+  conf1
+  conf2
+* dev
+  main
+  three
+  two
+
+
+
+[conf1]
+PS C:\Users\tj\Desktop\test2> git checkout conf1
+
+PS C:\Users\tj\Desktop\test2> git commit -m "conf11"
+
+PS C:\Users\tj\Desktop\test2> git push
+
+git push --set-upstream origin conf1
+
+
+PS C:\Users\tj\Desktop\test2> git checkout dev
+
+PS C:\Users\tj\Desktop\test2> git pull
+
+PS C:\Users\tj\Desktop\test2> git branch -d conf1
+
+PS C:\Users\tj\Desktop\test2> git branch
+  conf2
+* dev
+  main
+  three
+  two
+
+
+[conf2]
+
+PS C:\Users\tj\Desktop\test2> git switch conf2
+PS C:\Users\tj\Desktop\test2> git add .
+PS C:\Users\tj\Desktop\test2> git commit -m "conf2"
+On branch conf2
+nothing to commit, working tree clean
+
+PS C:\Users\tj\Desktop\test2> git push
+
+
+삭제
+C:\Users\tj\Desktop\test2> git checkout dev
+PS C:\Users\tj\Desktop\test2> git pull
+
+삭제 (vs 지우기)
+PS C:\Users\tj\Desktop\test2> git branch -d conf2  
+
+원격에 있는 conf2 지우기
+PS C:\Users\tj\Desktop\test2> git push origin --delete conf2
+
+
+PS C:\Users\tj\Desktop\test2> git add .
+PS C:\Users\tj\Desktop\test2> git commit -m "ex01"
+PS C:\Users\tj\Desktop\test2> git push
+
+
+만들기 conf3   conf4
+S C:\Users\tj\Desktop\test2> git branch conf3
+S C:\Users\tj\Desktop\test2> git branch conf4
+
+만들어졌는지 확인
+PS C:\Users\tj\Desktop\test2> git branch
+  conf3
+  conf4
+* dev
+  main
+
+
+PS C:\Users\tj\Desktop\test2> git checkout conf3     체크
+PS C:\Users\tj\Desktop\test2> git branch               확인
+* conf3
+  conf4
+  dev
+
+올리기
+PS C:\Users\tj\Desktop\test2> git add .
+PS C:\Users\tj\Desktop\test2> git commit -m "conf3"
+On branch conf3
+nothing to commit, working tree clean
+
+gif push 했을때 처음이면 안올라감 아래 메시지 뜬거로 다시 입력해서 올림
+PS C:\Users\tj\Desktop\test2> git push
+
+git push --set-upstream origin conf3
+
+PS C:\Users\tj\Desktop\test2>git push --set-upstream origin conf3
+
+git site 확인
+
+---------------------------
+conf3
+
+PS C:\Users\tj\Desktop\test2> git checkout dev
+PS C:\Users\tj\Desktop\test2> git branch -d conf3
+PS C:\Users\tj\Desktop\test2> git pull        받기
+
+PS C:\Users\tj\Desktop\test2> git checkout conf4   체크
+
+PS C:\Users\tj\Desktop\test2> git branch    확인
+* conf4
+  dev
+  main
+
+
+올리기
+PS C:\Users\tj\Desktop\test2> git add .       
+PS C:\Users\tj\Desktop\test2> git commit -m "conf4"
+PS C:\Users\tj\Desktop\test2> git push
+
+ git push --set-upstream origin conf4
+
+PS C:\Users\tj\Desktop\test2>  git push --set-upstream origin conf4
+
+------------------------------------------
+오후
+------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

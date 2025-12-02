@@ -1,0 +1,13 @@
+ub 브랜치 내용을 main에 병합
+git merge sub
+
+
+main 브랜치로 이동한 상태에서 sub 브랜치 내용을 병합
+
+충돌(conflict) 발생 시 수동으로 해결 후 커밋
+
+원격 main에 반영
+git push origin main
+
+
+병합 완료 후 원격 main에 push

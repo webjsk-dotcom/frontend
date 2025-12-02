@@ -33,6 +33,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
       <section className="highlights">
         <div className="container highlight-grid">
           <article className="highlight-card">
@@ -73,6 +75,7 @@ export default function Home() {
           </article>
         </div>
       </section>
+
 
       <section className="cta-banner">
         <div className="container cta-inner">

@@ -6,6 +6,7 @@ import Menu from "./pages/Menu";
 import HowToOrder from "./pages/HowToOrder";
 import News from "./pages/News";
 import Franchise from "./pages/Franchise";
+
 import SiteNav from "./Components/SiteNav";
 import SiteFooter from "./Components/SiteFooter";
 
